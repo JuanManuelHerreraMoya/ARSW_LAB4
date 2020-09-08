@@ -37,4 +37,15 @@ public class AnotherCinemaPersistence implements CinemaPersitence {
     public Map<String, Cinema> getCinemas() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void saveCinemaByFuntion(String name, CinemaFunction cinemaFunction) throws CinemaPersistenceException {
+
+    }
+
+    @Override
+    public void setCinemaFuntion(String name, CinemaFunction cf) throws CinemaPersistenceException {
+    }
+
 }
+

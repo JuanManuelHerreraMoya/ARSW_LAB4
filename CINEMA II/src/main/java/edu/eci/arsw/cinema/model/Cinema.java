@@ -9,6 +9,7 @@ import edu.eci.arsw.cinema.persistence.CinemaPersistenceException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.function.Function;
 
 /**
  *
@@ -59,5 +60,17 @@ public class Cinema {
 
     public void addCineFunction(CinemaFunction cinemaFunction) {
         functions.add(cinemaFunction);
+    }
+
+    public void setCinemaFuntion(CinemaFunction cf){
+        for(CinemaFunction i: functions){
+            System.out.println(i.getMovie().getName().equals(cf.getMovie().getName()));
+            if(i.getMovie().getName().equals(cf.getMovie().getName())){
+                i.setDate(cf.getDate());
+                i.setMovie(cf.getMovie());
+                i.setSeats(cf.getSeats());
+                //System.out.println(i.getDate()+" ljfasdhfljah ");
+            }
+        }
     }
 }

@@ -75,11 +75,23 @@ public class CinemaAPIController {
 
 
     @RequestMapping(path =  "/{name}", method = RequestMethod.POST)
-    public ResponseEntity<?> addNewCinema(@PathVariable String name,@RequestBody CinemaFunction cinemaFunction){
+    public ResponseEntity<?> addNewCinema(@PathVariable String name,@RequestBody CinemaFunction cf){
         //name es el nombre del cine al que crearle la pelicula
         try {
-            cs.createFuntion(name,cinemaFunction);
+            cs.createFuntion(name,cf);
             return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (CinemaException ex) {
+            Logger.getLogger(CinemaServicesInterface.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>("Error bla bla bla", HttpStatus.FORBIDDEN);
+        }
+    }
+
+    @RequestMapping(path =  "/{name}", method = RequestMethod.PUT)
+    public ResponseEntity<?> setCinemaFuntion(@PathVariable String name,@RequestBody CinemaFunction cf){
+        //name es el nombre del cine al que crearle la pelicula
+        try {
+            cs.setCinemaFuntion(name,cf);
+            return new ResponseEntity<>(HttpStatus.UPGRADE_REQUIRED);
         } catch (CinemaException ex) {
             Logger.getLogger(CinemaServicesInterface.class.getName()).log(Level.SEVERE, null, ex);
             return new ResponseEntity<>("Error bla bla bla", HttpStatus.FORBIDDEN);

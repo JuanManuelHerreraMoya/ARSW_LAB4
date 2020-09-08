@@ -16,5 +16,6 @@ public interface CinemaServicesInterface {
     public List<CinemaFunction> getFilterG(String cinema, String date, String filtro) throws CinemaException;
     public List<CinemaFunction> getFilterA(String cinema, String date, String filtro) throws CinemaException;
     public List<CinemaFunction> getFunctionsbyCinemaAndDateMname(String cinema, String date,String mname) throws CinemaException;
-    void createFuntion(String name, CinemaFunction cinemaFunction)throws CinemaException;
+    public void createFuntion(String name, CinemaFunction cinemaFunction) throws CinemaException;
+    public void setCinemaFuntion(String name, CinemaFunction cf) throws CinemaException;
 }

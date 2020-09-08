@@ -61,5 +61,8 @@ public class CinemaFunction {
     public void setDate(String date) {
         this.date = date;
     }
-        
+
+    public void setSeats(List<List<Boolean>> seats) {
+        this.seats = seats;
+    }
 }
