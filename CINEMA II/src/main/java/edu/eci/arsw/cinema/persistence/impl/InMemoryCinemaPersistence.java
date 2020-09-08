@@ -93,6 +93,15 @@ public class InMemoryCinemaPersistence implements CinemaPersitence{
     }
 
     @Override
+    public void saveCinemaByFuntion(String name, CinemaFunction cinemaFunction) throws CinemaPersistenceException {
+        for(Map.Entry<String, Cinema> fun : cinemas.entrySet()){
+            if (fun.getValue().getName().equals(name)){
+                fun.getValue().addCineFunction(cinemaFunction);
+            }
+        }
+    }
+
+    @Override
     public Cinema getCinema(String name)  {
         return cinemas.get(name);
     }
@@ -101,5 +110,8 @@ public class InMemoryCinemaPersistence implements CinemaPersitence{
     public Map<String,Cinema> getCinemas() {
         return cinemas;
     }
+
+
+
 
 }

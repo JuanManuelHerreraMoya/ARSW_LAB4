@@ -99,6 +99,15 @@ public class CinemaServices implements CinemaServicesInterface {
         }
     }
 
+    @Override
+    public void createFuntion(String name, CinemaFunction cinemaFunction) {
+        try {
+            cps.saveCinemaByFuntion(name,cinemaFunction);
+        } catch (CinemaPersistenceException ex) {
+            Logger.getLogger(CinemaServices.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public List<CinemaFunction> getFilterG(String cinema, String date, String filtro) throws CinemaException{
         try {
             List<CinemaFunction> cinemaF = cps.getFunctionsbyCinemaAndDate(cinema, date);
@@ -116,4 +125,5 @@ public class CinemaServices implements CinemaServicesInterface {
             throw new CinemaException(e.getMessage(), e);
         }
     }
+
 }

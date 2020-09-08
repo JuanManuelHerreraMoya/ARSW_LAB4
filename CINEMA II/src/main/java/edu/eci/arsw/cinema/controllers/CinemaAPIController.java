@@ -73,17 +73,19 @@ public class CinemaAPIController {
         }
     }
 
-    /*
-    @RequestMapping(path =  "/cinemas/{name}", method = RequestMethod.POST)
-    public ResponseEntity<?> addNewCinema(@PathVariable String name, @RequestBody CinemaFunction cinemaFunction){
+
+    @RequestMapping(path =  "/{name}", method = RequestMethod.POST)
+    public ResponseEntity<?> addNewCinema(@PathVariable String name,@RequestBody CinemaFunction cinemaFunction){
+        //name es el nombre del cine al que crearle la pelicula
         try {
-            cs.addNewCinema(cinema);
+            cs.createFuntion(name,cinemaFunction);
+            return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (CinemaException ex) {
             Logger.getLogger(CinemaServicesInterface.class.getName()).log(Level.SEVERE, null, ex);
             return new ResponseEntity<>("Error bla bla bla", HttpStatus.FORBIDDEN);
         }
     }
 
-     */
+
 
 }
