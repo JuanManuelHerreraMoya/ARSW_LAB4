@@ -1,0 +1,8 @@
+Qué condiciones de carrera se podrían presentar?
+	RES: Puede ocurrir que cuando actualicen una función, si son varias personas las que hacen esa actualización
+	     ocurrira que no tendra la informacion mas acertada, o al hacer consultas puede que no le llege la ultima
+	     modificación.
+
+Cuales son las respectivas regiones críticas?
+	RES: Las regiones criticas se presentan principalmente donde tengamos un arreglo, como en el CinemaFuntion
+	     o en el HashMap de los Cines, deberiamos manejar estos arreglos con arreglos seguros.
