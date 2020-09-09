@@ -1,5 +1,11 @@
 # ARSW_LAB4
 
+
+## Comando a usar para poder activar la interfaz web y poder ve las consultas.
+
+     mvn clean compile
+     mvn spring-boot:run
+            
 ## Descripción 
 
 En este ejercicio se va a construír el componente CinemaRESTAPI, el cual permita gestionar la reserva de boletos de una prestigiosa compañia de cine. La idea de este API es ofrecer un medio estandarizado e 'independiente de la plataforma' para que las herramientas que se desarrollen a futuro para la compañía puedan gestionar los boletos de forma centralizada. El siguiente, es el diagrama de componentes que corresponde a las decisiones arquitectónicas planteadas al inicio del proyecto.
